@@ -16,9 +16,6 @@ class ChartBar extends StatelessWidget {
           child: FittedBox(
             child: Text(
               '\$${spendingAmount.toStringAsFixed(0)}',
-              style: TextStyle(
-                fontFamily: 'Quicksand',
-              ),
             ),
           ),
         ),
@@ -54,12 +51,7 @@ class ChartBar extends StatelessWidget {
         SizedBox(
           height: 4,
         ),
-        Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Quicksand',
-          ),
-        ),
+        Text(label),
       ],
     );
   }
