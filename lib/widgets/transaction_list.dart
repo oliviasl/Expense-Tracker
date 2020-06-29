@@ -55,6 +55,9 @@ class TransactionList extends StatelessWidget {
                     ),
                     subtitle: Text(
                       DateFormat.yMMMEd().format(transactions[index].date),
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                      ),
                     ),
                   ),
                 );
