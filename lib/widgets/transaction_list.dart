@@ -7,7 +7,10 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final Function removeTransaction;
 
-  TransactionList(this.transactions, this.removeTransaction);
+  TransactionList(
+    this.transactions,
+    this.removeTransaction,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +63,20 @@ class TransactionList extends StatelessWidget {
                   subtitle: Text(
                     DateFormat.yMMMEd().format(transactions[index].date),
                   ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete),
-                    color: Theme.of(context).errorColor,
-                    onPressed: () => removeTransaction(transactions[index].id),
-                  ),
+                  trailing: MediaQuery.of(context).size.width > 450
+                      ? FlatButton.icon(
+                          icon: Icon(Icons.delete),
+                          label: Text('Delete'),
+                          textColor: Theme.of(context).errorColor,
+                          onPressed: () =>
+                              removeTransaction(transactions[index].id),
+                        )
+                      : IconButton(
+                          icon: Icon(Icons.delete),
+                          color: Theme.of(context).errorColor,
+                          onPressed: () =>
+                              removeTransaction(transactions[index].id),
+                        ),
                 ),
               );
             },

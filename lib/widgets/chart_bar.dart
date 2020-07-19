@@ -39,9 +39,11 @@ class ChartBar extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      EdgeInsets.only(top: 60 * (1 - spendingPercentOfTotal)),
-                  height: 60 * spendingPercentOfTotal,
+                  margin: EdgeInsets.only(
+                      top: constraints.maxHeight *
+                          0.6 *
+                          (1 - spendingPercentOfTotal)),
+                  height: constraints.maxHeight * 0.6 * spendingPercentOfTotal,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(10),
